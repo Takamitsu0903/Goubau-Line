@@ -35,7 +35,7 @@ def compute_rho_ap_for_gamma_ap(gamma_ap, p):
 
 # Parameters
 a_prime_cm = 0.105           # Overall outer radius a' in cm
-p_target = 0.99            # 90% power containment
+p_target = 0.99            # 90% power containment # You can modify this to 50%, 75% etc. (Normally confinement should be minimum 90%)
 gamma_ap_values = np.logspace(-4, -1, 150)
 
 # Compute rho/a' for all gamma'a' values
