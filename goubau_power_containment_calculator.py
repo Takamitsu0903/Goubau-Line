@@ -1,3 +1,13 @@
+"""
+plot_power_containment.py
+
+This script calculates and plots the normalized radial boundary (rho/a') that contains 99% of the power 
+as a function of the normalized attenuation constant (gamma' * a'), based on Goubau's Equation 36a.
+
+Author: Takamitsu0903
+Affiliation: UBC - Surface Wave Research
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.special import hankel1
