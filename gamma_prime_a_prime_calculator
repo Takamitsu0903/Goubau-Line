@@ -1,0 +1,64 @@
+"""
+solve_gamma_a_prime_from_G.py
+
+This script solves the inverse of Goubau's power containment function:
+    G(γ′a′) = -[(γ′a′ / 2π)^2] * ln(0.89 * γ′a′)
+
+Given a specific value of G (e.g., from a known power boundary condition), 
+the script numerically computes the corresponding normalized attenuation-distance 
+product γ′a′ by finding the root of the equation:
+
+    f(x) = x^2 * ln(0.89 * x) + C  = 0
+    where C = -(2π)^2 * G
+
+Key features:
+- Plots the function f(x) to visualize root behavior
+- Automatically identifies bracket ranges for root finding
+- Uses Brent's method to robustly compute the solution
+
+Returns:
+- gamma_a_prime_solution: The computed value of γ′a′ for the given G
+
+Author: Takamitsu0903
+"""
+
+
+import numpy as np
+from scipy.optimize import root_scalar
+import matplotlib.pyplot as plt
+
+# Given G value
+#G_value = 1.2792e-02
+C = - (2 * np.pi)**2 * G_value
+
+# Define the function to solve
+def f(x):
+    return x**2 * np.log(0.89 * x) - C
+
+# Evaluate function over a range
+x_vals = np.linspace(0.001, 1.0, 500)
+f_vals = np.array([f(x) for x in x_vals])
+
+# Plot to visualize
+plt.plot(x_vals, f_vals)
+plt.axhline(0, color='red', linestyle='--')
+plt.xlabel(r"$\gamma' a'$")
+plt.ylabel("f(x)")
+plt.title("Scan of Goubau Equation Function")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+# Find a valid bracket where f(x) changes sign
+sign_changes = np.where(np.diff(np.sign(f_vals)))[0]
+brackets = [(x_vals[i], x_vals[i+1]) for i in sign_changes]
+
+# Solve using the first valid bracket
+if brackets:
+    bracket = brackets[0]
+    solution = root_scalar(f, bracket=bracket, method='brentq')
+    gamma_a_prime_solution = solution.root if solution.converged else None
+else:
+    gamma_a_prime_solution = None
+
+gamma_a_prime_solution
