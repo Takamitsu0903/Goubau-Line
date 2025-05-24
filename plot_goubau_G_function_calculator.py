@@ -1,3 +1,39 @@
+"""
+calculate_G_from_geometry.py
+
+This script computes the dimensionless G(γ′a′) function from Goubau’s formulation 
+based on physical geometry and material parameters of a Goubau line. 
+
+The formula used is derived from Goubau’s analytical approximation:
+
+    G(γ′a′) = ln(a′/a) / [ (εᵢ / (εᵢ - ε)) * (λ / a′)^2 ]
+
+Where:
+- a: inner conductor radius [cm]
+- a′: outer radius of the dielectric layer [cm]
+- εᵢ: relative permittivity of dielectric
+- ε: permittivity of outer medium (usually air = 1)
+- λ: free-space wavelength [cm]
+
+Inputs:
+- εᵢ: dielectric constant of the coating material (e.g., polyethylene = 2.25–4)
+- ε: surrounding medium permittivity (typically 1.0 for air)
+- λ: wavelength in cm (e.g., 50 cm = 600 MHz)
+- a′: dielectric outer radius in cm
+- a: conductor radius in cm
+
+Returns:
+- G: computed value of G(γ′a′), dimensionless
+
+Example usage is included for:
+- polyethylene dielectric
+- air as the outer medium
+- λ = 50 cm (600 MHz)
+- a′ = 1 cm, a = 0.944 cm
+
+Author: Takamitsu0903
+"""
+
 import math
 import pandas as pd
 import numpy as np
