@@ -28,7 +28,7 @@ from scipy.optimize import root_scalar
 import matplotlib.pyplot as plt
 
 # Given G value
-#G_value = 1.2792e-02
+G_value = 1.2792e-02 #Input the G value that you find from the plot_goubau_G_function_calcualtor.py
 C = - (2 * np.pi)**2 * G_value
 
 # Define the function to solve
