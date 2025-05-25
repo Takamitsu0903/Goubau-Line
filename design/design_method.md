@@ -1,9 +1,9 @@
 # Goubau Line Design Method
 
-This document summarizes the design approach for simulating and analyzing surface waves on Goubau lines. It includes the reasoning behind parameter choices and assumptions used throughout the Python scripts and HFSS models.
-The majority of the design method is based on the G.Goubau's paper about the "Surface Waves and Their Application to Transmission Lines", but has sligtmodification on the method of calculation based on the recent discoveries.
 ---
 
+This document summarizes the design approach for simulating and analyzing surface waves on Goubau lines. It includes the reasoning behind parameter choices and assumptions used throughout the Python scripts and HFSS models.
+The majority of the design method is based on the G.Goubau's paper about the "Surface Waves and Their Application to Transmission Lines", but has sligtmodification on the method of calculation based on the recent discoveries.
 ## 1. Objective
 
 - Simulate propagation modes on Goubau lines
