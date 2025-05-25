@@ -26,7 +26,7 @@ The majority of the design method is based on the G.Goubau's paper about the "Su
 
 - Propagation constant-guided wave( $h$ ):  
 - Propagation constant-free space wave( $k$ ): 
-- Power confined outiside of raidus ( $N_\rho$ ): total power of the wave which travels
+- Power confined outiside of raidus ( $N_{\rho}$ ): total power of the wave which travels
 outside of a cylinder of radius p surrounding the wire. ie. $\infty > r > $\rho$
 - Layer scaling factor($G$): G is propotional function with the ratio of a' and a
 - Power distribution function ($F(\gamma' \rho)$): F is a propotional function that shows how much power is outside of the radius $\rho$   
