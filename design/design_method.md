@@ -21,7 +21,7 @@ The majority of the design method is based on the G.Goubau's paper about the "Su
 | Inner radius     | $a$           | 0.94 cm        | Based on commercial rods |
 | Outer radius     | $a'$          | 1.0 cm         | 1 mm dielectric layer |
 | Frequency        | $f$           | 3 GHz (λ = 10 cm) | Mid-microwave range |
-|------------------|--------------|----------------|------------|
+
 ### Mathematical Parameter
 
 - Propagation constant-guided wave( $h$ ):  
