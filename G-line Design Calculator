@@ -1,0 +1,90 @@
+# Full code: Using Goubau's original F(γ'ρ) for accurate ρ99 calculation
+
+import numpy as np
+from scipy.optimize import root_scalar
+from scipy.special import hankel1
+
+# Step 1: G calculation (same as your original setup)
+def calculate_G(epsilon_i, epsilon, wavelength_cm, a_prime_cm, a_cm):
+    ln_ratio = np.log(a_prime_cm / a_cm)
+    epsilon_ratio = epsilon_i / (epsilon_i - epsilon)
+    lambda_over_a_sq = (wavelength_cm / a_prime_cm) ** 2
+    G = ln_ratio / (epsilon_ratio * lambda_over_a_sq)
+    return G
+
+# Step 2: Solve for gamma'·a'
+def solve_gamma_a_prime(G):
+    C = - (2 * np.pi)**2 * G
+    def f(x):
+        return x**2 * np.log(0.89 * x) - C
+    x_vals = np.linspace(0.001, 1.0, 500)
+    f_vals = np.array([f(x) for x in x_vals])
+    sign_changes = np.where(np.diff(np.sign(f_vals)))[0]
+    brackets = [(x_vals[i], x_vals[i+1]) for i in sign_changes]
+    if not brackets:
+        return None
+    solution = root_scalar(f, bracket=brackets[0], method='brentq')
+    return solution.root if solution.converged else None
+
+# Step 3: Define Goubau's F(γ'ρ)
+def F_goubau(gamma_rho):
+    j_gamma_rho = 1j * gamma_rho
+    H0 = hankel1(0, j_gamma_rho)
+    H1 = hankel1(1, j_gamma_rho)
+    term1 = (-2 / gamma_rho) * 1j * H0 * H1
+    term2 = -(H0**2 + H1**2)
+    return gamma_rho**2 * (term1 + term2)
+
+# Step 4: Compute ρ99 using F(γ'ρ)
+def calculate_rho_99_goubau(gamma_prime, a_prime_cm, p=0.99):
+    gamma_ap = gamma_prime * a_prime_cm
+    F_ap = F_goubau(gamma_ap)
+    target = (1 - p) * F_ap
+
+    def equation(rho):
+        return F_goubau(gamma_prime * rho) - target
+
+'''
+In this calculation I am using the p = 0.99 which set how much confinement you want to have ie. if you want to have the aperture size to be 99% of 
+the total power confinement, then you can leave it to be as it is, you can also set to desired values
+
+    result = root_scalar(equation, bracket=[a_prime_cm, 100], method='brentq')
+    return result.root if result.converged else None
+
+# Main computation wrapper
+def compute_aperture_size_goubau(epsilon_i, epsilon, wavelength_cm, a_cm, a_prime_cm, p=0.99):
+    G = calculate_G(epsilon_i, epsilon, wavelength_cm, a_prime_cm, a_cm)
+    gamma_ap = solve_gamma_a_prime(G)
+    if gamma_ap is None:
+        return {"error": "No valid solution for gamma·a'"}
+    gamma_prime = gamma_ap / a_prime_cm
+    rho_99 = calculate_rho_99_goubau(gamma_prime, a_prime_cm, p)
+    return {
+        "G": G,
+        "gamma'·a'": gamma_ap,
+        "gamma' (cm^{-1})": gamma_prime,
+        "aperture radius ρ99 (cm)": rho_99
+    }
+
+# === Example parameters ===
+'''
+epsilon_i = 2.25
+epsilon = 1.0
+wavelength_cm = 	33.3
+a_prime_cm = 0.295
+a_cm = 0.09  # 0.944 cm
+'''
+epsilon_i = 3.0
+epsilon = 1.0
+wavelength_cm = 9.09
+#a_prime_cm = 1.0
+#a_cm = a_prime_cm - 0.056  # 0.944 cm
+
+a_cm = 0.1  # 0.944 cm
+a_prime_cm = 0.1+0.005
+
+# Execute the calculation
+results = compute_aperture_size_goubau(epsilon_i, epsilon, wavelength_cm, a_cm, a_prime_cm)
+
+# Print results
+results
