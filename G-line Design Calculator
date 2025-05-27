@@ -66,7 +66,7 @@ def compute_aperture_size_goubau(epsilon_i, epsilon, wavelength_cm, a_cm, a_prim
         "aperture radius ρ99 (cm)": rho_99
     }
 
-# === Example parameters ===
+# === Example parameters 1===
 '''
 epsilon_i = 2.25
 epsilon = 1.0
@@ -74,12 +74,10 @@ wavelength_cm = 	33.3
 a_prime_cm = 0.295
 a_cm = 0.09  # 0.944 cm
 '''
+# === Example parameters 2===
 epsilon_i = 3.0
 epsilon = 1.0
 wavelength_cm = 9.09
-#a_prime_cm = 1.0
-#a_cm = a_prime_cm - 0.056  # 0.944 cm
-
 a_cm = 0.1  # 0.944 cm
 a_prime_cm = 0.1+0.005
 
