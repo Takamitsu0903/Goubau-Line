@@ -1,5 +1,5 @@
 ## Conical design launcher 
---- 
+
 The design of the conical designed launcher taper has been studied by some author. This is not exactly the surface wave laucnher but the concept is the same.
 The application of the structure is called "conical waveguide" this structure allows us to calculate the taper that is requruired to match the impedance of the Goubau line as well as the input impedance.
 The calculation is done in the following manner.
