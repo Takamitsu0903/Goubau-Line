@@ -6,16 +6,21 @@ This repository contains electromagnetic simulations and scripts used to study t
 - ✅ Ansys HFSS simulation files
 - ✅ Python/Matlab scripts for field processing
 - ✅ Sample S-parameter plots and mode profiles
+- ✅ Experimental setup
+- ✅ Validation of the theory proposed by Goubau
+- ✅ Improvement of launching method
+- ✅ Mode modification
+- ✅ Theoretical Analysis
+- ✅ Design method and calculator
 
 ## Requirements
 - Ansys Electronics Desktop (HFSS)
 - Python 3.10 (optional)
-- Libraries: numpy, matplotlib
+- Libraries: numpy, matplotlib math, scikit learn
 
 ## Getting Started
-1. Open `/ansys-models/goubau.aedt` in HFSS.
-2. Simulate the `Mode1` setup.
-3. Use `/scripts/plot_sparams.py` to visualize S21 and field distributions.
+1. Calculate the aperture size that is nessesary for the effective launch
+2. Open HFSS file for the simulation full field simulation
 
 ## License
 This project is released under the MIT License. See `LICENSE` for details.
