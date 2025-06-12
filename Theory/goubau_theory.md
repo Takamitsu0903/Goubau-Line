@@ -10,7 +10,7 @@ The following is the difference of two:
 |PEC |No                     |Yes                        |Yes      |
 |$f_{cut}$|No                |No                         |Yes      |
 |Confinement|3               |2                          |1        |
-
+|----|-----------------------|---------------------------|---------|
 
 In recent papers it is often have more weight on the fact of the confinement effect on the wave around axial structure, however the Goubau's aim of this system is not particualrly the confinement which increase the efficiency. His primary motivation is to examine and construct the structure that we can build the axial surface wave transmission that can propagate the wave that is independent of the permittivity, whcih Sommerfeld axial wave can only be possible to transmit the wave when the conductor rod is inperfect.   
 
