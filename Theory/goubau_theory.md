@@ -9,12 +9,17 @@ The following is the difference of two:
 |----|-----------------------|---------------------------|---------|
 |PEC |No                     |Yes                        |Yes      |
 |$f_{cut}$|No                |No                         |Yes      |
-|Confinement|3               |2                          |1        |
-|----|-----------------------|---------------------------|---------|
+|Confinement|Least           |Mid                        |Most     |
+|Dielectric loss|Least       |Mid                        |Most     |
+
+
+
 
 In recent papers it is often have more weight on the fact of the confinement effect on the wave around axial structure, however the Goubau's aim of this system is not particualrly the confinement which increase the efficiency. His primary motivation is to examine and construct the structure that we can build the axial surface wave transmission that can propagate the wave that is independent of the permittivity, whcih Sommerfeld axial wave can only be possible to transmit the wave when the conductor rod is inperfect.   
 
 In most of the recent articles are mainly defining the G-line that is based on the structure that can be described as dielectric coated wire. However, it is important to note that the Goubau line also have the ones with threads on the center conductor not only the wire with the coat.
 The later one rearly talked about in the most recent papers, and reason of this could be tied to the manufacturing difficulty.  
 This project is majority based on the coated wire goubau line structure, but in the future we will do indepth research on this matter.
-Both of the structures are based on the idea is to modify the reactance of the surface. 
+Both of the structures are based on the idea is to modify the reactance of the surface.
+
+
