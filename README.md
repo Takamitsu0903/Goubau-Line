@@ -4,7 +4,7 @@ Welcome to my research notes and derivations for surface wave propagation, Gouba
 
 ## 📚 Topics
 
-- [Goubau Line Theory](goubau_theory.md)
+- [Goubau Line Theory](Theory/goubau_theory.md)
 - [Dispersion Relation Derivation](dispersion_relation.md)
 - [Power Containment and γ′a′ Plot](power_containment.md)
 - [Surface Wave Taxonomy: Zenneck, Sommerfeld, SPP](surface_wave_types.md)
