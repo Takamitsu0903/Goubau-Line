@@ -48,4 +48,3 @@ outside of a cylinder of radius p surrounding the wire. ie. $\infty > r > $\rho$
 ---
 ## 5. Key finding:
 - The structure technically has the cutoff for the wave to propagation, but the cutoff is not only dependent on the frequency, it is also dependent on the $\lambda$, and ratio $\frac{a'}{a}$, permittivities $\epsilon_i$ and $\epsilon$. This is not directly related, but depending on the $G(\gamma'a')$ that determined there will and will not be a solution for the $\gamma'a'$.
-- 
